@@ -5,20 +5,39 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
+  <div class="govuk-grid-column-full">
 
     <h1 class="govuk-heading-xl">
       {{ serviceName }}
     </h1>
 
-
-      {{ govukButton({
-          text: "Continue",
-          href: "example/where-do-you-live"
+    <div>
+      <h1 class="govuk-heading-m">Reasonable Adjustments</h1>
+      <p class="govuk-body">Problem statement:</p>
+      <p class="govuk-body">DWP is legally required to make reasonable adjustments for claimants which need to attend an in person health assessment.
+An ECHR letter is expected indicating that DWP is currently not sufficiently meeting this legal requirement, and a response describing a roadmap to compliance is expected.</p>
+      
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    {{ govukButton({
+          text: "Claimant facing",
+          href: "/V1/hig-qs/hig-tasklist"
         }) }}
-    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    {{ govukButton({
+          text: "Agent facing",
+          href: "/V1/PR/pr-overview.html"
+        }) }}
+  </div>
+</div> 
+    </div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
   </div>
 </div>
 

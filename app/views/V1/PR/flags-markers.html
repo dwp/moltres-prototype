@@ -1,0 +1,82 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--m">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Jeff Bridges</h1>
+        <p class="govuk-body">NA 11 22 33 C </p>
+      </div>
+    </div>
+  </main>
+</div>
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <div class="govuk-grid-column-one-half">
+    <ul class="govuk-list">
+  <li>
+    <a class="govuk-link" href="/V1/PR/pr-overview">Overview</a>
+  </li>
+  <li>
+    <a class="govuk-link" href="#">Event history</a>
+  </li>
+  <li>
+    <a class="govuk-link" href="#">Application and decisions</a>
+  </li>
+</ul>
+
+  <p class="govuk-body govuk-!-font-weight-bold">Personal details</p>
+    <ul class="govuk-list">
+  <li>
+    <a class="govuk-link" href="#">Flags and markers</a>
+  </li>
+</ul>
+
+  <p class="govuk-body govuk-!-font-weight-bold">Other actions</p>
+    <ul class="govuk-list">
+  <li>
+    <a class="govuk-link" href="#">View supplied information</a>
+  </li>
+</ul>
+  </div>
+
+
+      </div>
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Flags and markers</h1>
+        
+
+        <dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Additional support
+    </dt>
+    <dd class="govuk-summary-list__value">
+        Evidence that the person has a severe mental health or behavioural condition, learning difficulty, developmental disorder or memory problems.
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Reasonable adjustments
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p class="govuk-body">{{ data['more-detail'] }}</p>
+    </dd>
+  </div>
+</dl>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

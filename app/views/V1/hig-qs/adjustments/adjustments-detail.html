@@ -1,0 +1,61 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Tell us about your adjustment needs
+ – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "/V1/hig-qs/adjustments/adjustments-at-assessment"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        ***
+      </h1>
+      <p class="govuk-body">For example, tell us if:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>you have difficulty hearing</li>
+  <li>you do not have equipment at home for a video call</li>
+  <li>you cannot use stairs</li>
+  <li>you have difficulty travelling or using public transport</li>
+  <li>you need an accessible toilet</li>
+</ul>
+
+
+
+      <form class="form" action="/V1/hig-qs/adjustments/adjustments-check-answers" method="post">
+
+
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+{{ govukTextarea({
+  name: "more-detail",
+  id: "more-detail",
+  label: {
+    text: "Tell us about your adjustment needs",
+    classes: "govuk-label--m",
+    isPageHeading: true
+  }
+}) }}
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+
+      <p class="govuk-body">
+  <a href="/V1/hig-qs/hig-tasklist" class="govuk-link govuk-link--no-visited-state">Return to list</a>
+</p>
+
+    </div>
+  </div>
+
+{% endblock %}

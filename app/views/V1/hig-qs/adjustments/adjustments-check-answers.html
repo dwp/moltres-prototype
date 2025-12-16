@@ -1,0 +1,71 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-thirds-from-desktop">
+      <form class="form" action="/V1/hig-qs/hig-tasklist" method="post">
+
+      <h1 class="govuk-heading-xl">
+        Check your answers: access needs and adjustments
+      </h1>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Do you need any adjustments?"
+            },
+            value: {
+              text: data["adjustment-needed"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "/V1/hig-qs/adjustments/adjustments-at-assessment.html",
+                  text: "Change",
+                  visuallyHiddenText: "Do you need any adjustments?"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Tell us about your access needs or adjustments"
+            },
+            value: {
+              text: data["more-detail"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "/V1/hig-qs/adjustments/adjustments-detail.html",
+                  text: "Change",
+                  visuallyHiddenText: "Tell us about your access needs or adjustments"
+                }
+              ]
+            }
+          }
+          
+        ]
+      }) }}
+
+      {{ govukButton({
+          text: "Confirm and save"
+        }) }}
+      
+</form>
+    </div>
+  </div>
+{% endblock %}

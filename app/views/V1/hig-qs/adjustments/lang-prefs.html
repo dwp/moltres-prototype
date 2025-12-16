@@ -1,0 +1,58 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/V1/hig-qs/adjustments/lang-options" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  classes: "govuk-radios--inline",
+  name: "lang-prefs",
+  fieldset: {
+    legend: {
+      text: "Which language should we speak at an assessment?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "English",
+      text: "English"
+    },
+    {
+      value: "Other",
+      text: "Other"
+    }
+  ]
+}) }}
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+
+      <p class="govuk-body">
+  <a href="/V1/hig-qs/hig-tasklist" class="govuk-link govuk-link--no-visited-state">Return to list</a>
+</p>
+
+    </div>
+  </div>
+
+{% endblock %}

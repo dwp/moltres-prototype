@@ -1,0 +1,72 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">
+        Check your answers: language preferences
+      </h1>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Which language should we speak at an assessment?"
+            },
+            value: {
+              text: data["lang-prefs"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "/V1/hig-qs/adjustments/lang-prefs",
+                  text: "Change",
+                  visuallyHiddenText: "Which language should we speak at an assessment?"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Which language should the interpreter speak to you in?"
+            },
+            value: {
+              text: data["lang-option"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "/V1/hig-qs/adjustments/lang-options",
+                  text: "Change",
+                  visuallyHiddenText: "Which language should the interpreter speak to you in?"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <form action="/V1/hig-qs/hig-tasklist" method="post" novalidate>
+
+        {{ govukButton({
+          text: "Confirm and save"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

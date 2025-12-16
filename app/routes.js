@@ -35,15 +35,26 @@ router.use('/', (req, res, next) => {
   });
 
   // Routing for the example journey. 
-  router.post('/country-answer', function(request, response) {
 
-    var country = request.session.data['country']
-    if (country == "England"){
-        response.redirect("example/complete")
-    } else {
-        response.redirect("example/ineligible")
-    }
+router.post('/V1/hig-qs/adjustments/adjustments-detail', function(request, response) {
+
+	var adjustmentNeeded = request.session.data['adjustment-needed']
+	if (adjustmentNeeded == 'Yes'){
+		response.redirect("/V1/hig-qs/adjustments/adjustments-detail")
+	} else {
+		response.redirect("/V1/hig-qs/adjustments/lang-prefs")
+	}
+})
+
+router.post('/V1/hig-qs/adjustments/lang-options', function(request, response) {
+
+	var langPrefs = request.session.data['lang-prefs']
+	if (langPrefs == 'Other'){
+		response.redirect("/V1/hig-qs/adjustments/lang-options")
+	} else {
+		response.redirect("/V1/hig-qs/adjustments/lang-prefs-check-answers")
+	}
 })
 
 
-  // Add your routes here
+  

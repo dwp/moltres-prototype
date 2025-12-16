@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Adjustments at an assessment – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "/V1/hig-qs/hig-tasklist"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Adjustments at an assessment
+      </h1>
+
+      <form class="form" action="/V1/hig-qs/adjustments/adjustments-detail" method="post">
+
+        <p class="govuk-body">We may invite you to a phone, video or face-to-face assessment if we need more information from you.</p>
+        <p class="govuk-body">You can ask for adjustments if you need them.</p>
+        <p class="govuk-body">If you think you will have difficulty accessing an assessment you can ask for adjustments or tell us about your access needs</p>
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  classes: "govuk-radios--inline",
+  name: "adjustment-needed",
+  fieldset: {
+    legend: {
+      text: "Do you need any adjustments?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "Yes",
+      text: "Yes"
+    },
+    {
+      value: "No",
+      text: "No"
+    }
+  ]
+}) }}
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+
+      <p class="govuk-body">
+  <a href="/V1/hig-qs/hig-tasklist" class="govuk-link govuk-link--no-visited-state">Return to list</a>
+</p>
+
+    </div>
+  </div>
+
+{% endblock %}
