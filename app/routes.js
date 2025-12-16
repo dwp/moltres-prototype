@@ -42,7 +42,7 @@ router.post('/V1/hig-qs/adjustments/adjustments-detail', function(request, respo
 	if (adjustmentNeeded == 'Yes'){
 		response.redirect("/V1/hig-qs/adjustments/adjustments-detail")
 	} else {
-		response.redirect("/V1/hig-qs/adjustments/lang-prefs")
+		response.redirect("/V1/hig-qs/adjustments/adjustments-check-answers")
 	}
 })
 
