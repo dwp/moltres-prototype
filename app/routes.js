@@ -49,7 +49,7 @@ router.post('/V1/hig-qs/adjustments/adjustments-detail', function(request, respo
 router.post('/V1/hig-qs/adjustments/lang-options', function(request, response) {
 
 	var langPrefs = request.session.data['lang-prefs']
-	if (langPrefs == 'Other'){
+	if (langPrefs == 'Yes'){
 		response.redirect("/V1/hig-qs/adjustments/lang-options")
 	} else {
 		response.redirect("/V1/hig-qs/adjustments/lang-prefs-check-answers")

@@ -16,6 +16,10 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      <h1 class="govuk-heading-l">Interpreter service</h1>
+      <p class="govuk-body">We can provide an interpreter at an assessment if you need to communicate in a language other than English.</p>
+
+
       <form class="form" action="/V1/hig-qs/adjustments/lang-options" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
@@ -25,19 +29,19 @@
   name: "lang-prefs",
   fieldset: {
     legend: {
-      text: "Which language should we speak at an assessment?",
+      text: "Do you need an interpreter for your assessment?",
       isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
+      classes: "govuk-fieldset__legend--m"
     }
   },
   items: [
     {
-      value: "English",
-      text: "English"
+      value: "Yes",
+      text: "Yes"
     },
     {
-      value: "Other",
-      text: "Other"
+      value: "No",
+      text: "No"
     }
   ]
 }) }}
