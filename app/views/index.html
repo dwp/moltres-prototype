@@ -52,6 +52,39 @@ An ECHR letter is expected indicating that DWP is currently not sufficiently mee
 
 
   </div>
+
+  <div>
+      <h1 class="govuk-heading-m">Edit claim</h1>
+      
+      <div>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+      </td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--purple">
+          ONGOING
+        </strong>
+      </td>
+    </tr>
+</div>
+<br>
+      <p class="govuk-body">Problem statement:</p>
+      <p class="govuk-body">Agents are currently unable to edit a claim in PIPS. Any claims that require editing are ejected from PIPS and need to be rebuilt into PIPCS. As part of this work we need to make sure agents are able to edit in PIPS so we have less case ejects.</p>
+      
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    {{ govukButton({
+          text: "Edit address",
+          href: "/V2/agent-checks/pre-checks.html"
+        }) }}
+  </div>
+</div>
+
+    </div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+  </div>
 </div>
 
 {% endblock %}

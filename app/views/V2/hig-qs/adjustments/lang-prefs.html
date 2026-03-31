@@ -1,0 +1,62 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Interpreter service – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Interpreter service</h1>
+      <p class="govuk-body">We can provide an interpreter at an assessment if you need to communicate in a language other than English.</p>
+
+
+      <form class="form" action="/V1/hig-qs/adjustments/lang-options" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  classes: "govuk-radios--inline",
+  name: "lang-prefs",
+  fieldset: {
+    legend: {
+      text: "Do you need an interpreter for your assessment?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "Yes",
+      text: "Yes"
+    },
+    {
+      value: "No",
+      text: "No"
+    }
+  ]
+}) }}
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+
+      <p class="govuk-body">
+  <a href="/V1/hig-qs/hig-tasklist" class="govuk-link govuk-link--no-visited-state">Return to list</a>
+</p>
+
+    </div>
+  </div>
+
+{% endblock %}
