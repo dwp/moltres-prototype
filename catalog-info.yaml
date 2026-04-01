@@ -4,7 +4,8 @@ metadata:
   name: moltres.prototype
   title: Moltres-Prototype
   description: |
-    TODO: Moltres prototype to test things.
+    TODO: A Moltres prototype to use for testing things.
+
 
 
   annotations:
@@ -15,7 +16,7 @@ metadata:
     dwp.gov.uk/license: unknown
 
     dwp.gov.uk/last-verified.by: Anisa Jahan Ali
-    dwp.gov.uk/last-verified.on: 2025-12-17
+    dwp.gov.uk/last-verified.on: 2026-04-01
 
     dwp.gov.uk/open-source.approved: "false"
     dwp.gov.uk/open-source.location: none
@@ -37,7 +38,7 @@ metadata:
 spec:
   owner: group:default/backstage.group.user-centred-design
   system: system:default/unallocated
-  type: prototype
+  type: service
   lifecycle: experimental
 
   dependsOn:
