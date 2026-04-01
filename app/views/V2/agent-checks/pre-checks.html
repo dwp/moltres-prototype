@@ -1,7 +1,8 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Task list template – {{ serviceName }} – GOV.UK Prototype Kit
+  Prepare an application for an assessment provider
+ – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -38,63 +39,153 @@
       } %}
 
       {# To switch between the completed and incomplete statues, use some inline logic within the component below, like this: "status: (completedStatus if ... else incompleteStatus)" #}
-
+      
       {{ govukTaskList({
         idPrefix: "first-section",
         items: [
           {
             title: {
-              text: "Name of first task"
+              text: "National Insurance number"
             },
             href: "#",
             status: completedStatus
           },
           {
             title: {
-              text: "Name of second task"
+              text: "Name"
             },
             href: "#",
             status: incompleteStatus
-          }
-        ]
-      }) }}
-
-      <h2 class="govuk-heading-m govuk-!-margin-top-5">[ Heading for second set of tasks ]</h2>
-
-      {{ govukTaskList({
-        idPrefix: "second-section",
-        items: [
+          },
           {
             title: {
-              text: "Name of third task"
+              text: "Residential address"
             },
             href: "#",
             status: completedStatus
           },
           {
             title: {
-              text: "Name of fifth task"
+              text: "Date of birth"
             },
             href: "#",
             status: incompleteStatus
           },
           {
             title: {
-              text: "Name of sixth task"
-            },
-            href: "#",
-            status: completedStatus
-          },
-          {
-            title: {
-              text: "Name of seventh task"
+              text: "Nationality"
             },
             href: "#",
             status: incompleteStatus
           },
           {
             title: {
-              text: "Name of eighth task"
+              text: "Residency and presence"
+            },
+            href: "#",
+            status: incompleteStatus
+          },
+          {
+            title: {
+              text: "Immigration status"
+            },
+            href: "#",
+            status: incompleteStatus
+          },
+          {
+            title: {
+              text: "Special Rules End of Life (SREL)"
+            },
+            href: "#",
+            status: incompleteStatus
+          },
+          {
+            title: {
+              text: "Representitive or appointee"
+            },
+            href: "#",
+            status: incompleteStatus
+          },
+          {
+            title: {
+              text: "Withdrawn"
+            },
+            href: "#",
+            status: incompleteStatus
+          },
+          {
+            title: {
+              text: "Age criteria"
+            },
+            href: "#",
+            status: incompleteStatus
+          },
+          {
+            title: {
+              text: "Alternative format"
+            },
+            href: "#",
+            status: incompleteStatus
+          },
+          {
+            title: {
+              text: "Fraud"
+            },
+            href: "#",
+            status: incompleteStatus
+          },
+          {
+            title: {
+              text: "Keep customer interactions safe (KCIS)"
+            },
+            href: "#",
+            status: incompleteStatus
+          },
+          {
+            title: {
+              text: "Working abroad"
+            },
+            href: "#",
+            status: incompleteStatus
+          },
+          {
+            title: {
+              text: "Foreign benefits"
+            },
+            href: "#",
+            status: incompleteStatus
+          },
+          {
+            title: {
+              text: "Disability Living Allowance (DLA)"
+            },
+            href: "#",
+            status: incompleteStatus
+          },
+          {
+            title: {
+              text: "Child Disability Payment or Adult Disability Payment"
+            },
+            href: "#",
+            status: incompleteStatus
+          },
+          {
+            title: {
+              text: "Armed Forces Independence Payment (AFIP)"
+            },
+            href: "#",
+            status: incompleteStatus
+          },
+          {
+            title: {
+              text: "War Pensioners' Mobility Supplement (WPMS)"
+            },
+            href: "#",
+            status: incompleteStatus
+          },
+          {
+            title: {
+              text: "Constant Attendance Allowance"
             },
             href: "#",
             status: incompleteStatus
