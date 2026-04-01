@@ -1,0 +1,44 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  How to resolve this issue – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/V2/agent-checks/residential-address.html"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-m">Jeff Bridges</h1>
+ <p class="govuk-body">NA 11 22 33 C</p>
+
+      <h1 class="govuk-heading-l">
+        How to resolve this issue
+      </h1>
+
+      <p>
+        Answer the rest of the questions about thus application before you try to contact the applicant or change their address.
+
+      <div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+    You must verify the applicant's identity before you change their address in Searchlight.
+  </strong>
+</div>
+
+{{ govukButton({
+          text: "Continue",
+          href: "/V2/agent-checks/pre-checks-ra-issue.html"
+        }) }}
+    </div>
+  </div>
+
+{% endblock %}

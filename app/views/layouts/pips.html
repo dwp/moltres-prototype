@@ -1,0 +1,21 @@
+{#
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block header %}
+{{ govukHeader({
+  homepageUrl: "/index.html",
+  serviceName: "Personal Independence Payment",
+  serviceUrl: "#",
+  navigation: [
+    {
+      href: "#1",
+      text: "Homepage",
+      active: false
+    }
+  ]
+}) }}
+{% endblock %}

@@ -38,6 +38,13 @@
         }
       } %}
 
+      {% set issueStatus = {
+        tag: {
+          text: "Issue",
+          classes: "govuk-tag--yellow"
+        }
+      } %}
+
       {# To switch between the completed and incomplete statues, use some inline logic within the component below, like this: "status: (completedStatus if ... else incompleteStatus)" #}
       
       {{ govukTaskList({
@@ -61,8 +68,8 @@
             title: {
               text: "Residential address"
             },
-            href: "/V2/agent-checks/residential-address.html",
-            status: incompleteStatus
+            href: "/V2/agent-checks/confirm-update-address.html",
+            status: issueStatus
           },
           {
             title: {
