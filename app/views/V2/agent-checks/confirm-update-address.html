@@ -1,4 +1,4 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/pips.html" %}
 
 {% block pageTitle %}
  Have you confirmed and updated the address? – {{ serviceName }} – GOV.UK Prototype Kit
@@ -7,7 +7,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "javascript:window.history.back()"
+  href: "/V2/agent-checks/pre-checks-ra-issue.html"
 }) }}
 {% endblock %}
 

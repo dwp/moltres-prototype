@@ -27,14 +27,15 @@
 
       <h2 class="govuk-heading-m">Check application</h2>
 
-      {% set completedStatus = {
-        text: "Completed"
+      {% set taskDone = {
+        text: "Done",
+        classes: "govuk-tag govuk-tag--green"
       } %}
 
-      {% set incompleteStatus = {
+      {% set toDo = {
         tag: {
-          text: "Incomplete",
-          classes: "govuk-tag--blue"
+          text: "To do",
+          classes: "govuk-tag govuk-tag--grey"
         }
       } %}
 
@@ -48,147 +49,147 @@
               text: "National Insurance number"
             },
             href: "#",
-            status: completedStatus
+            status: toDo
           },
           {
             title: {
               text: "Name"
             },
             href: "#",
-            status: incompleteStatus
+            status: toDo
           },
           {
             title: {
               text: "Residential address"
             },
             href: "/V2/agent-checks/residential-address.html",
-            status: incompleteStatus
+            status: toDo
           },
           {
             title: {
               text: "Date of birth"
             },
             href: "#",
-            status: incompleteStatus
+            status: toDo
           },
           {
             title: {
               text: "Nationality"
             },
             href: "#",
-            status: incompleteStatus
+            status: toDo
           },
           {
             title: {
               text: "Residency and presence"
             },
             href: "#",
-            status: incompleteStatus
+            status: toDo
           },
           {
             title: {
               text: "Immigration status"
             },
             href: "#",
-            status: incompleteStatus
+            status: toDo
           },
           {
             title: {
               text: "Special Rules End of Life (SREL)"
             },
             href: "#",
-            status: incompleteStatus
+            status: toDo
           },
           {
             title: {
               text: "Representitive or appointee"
             },
             href: "#",
-            status: incompleteStatus
+            status: toDo
           },
           {
             title: {
               text: "Withdrawn"
             },
             href: "#",
-            status: incompleteStatus
+            status: toDo
           },
           {
             title: {
               text: "Age criteria"
             },
             href: "#",
-            status: incompleteStatus
+            status: toDo
           },
           {
             title: {
               text: "Alternative format"
             },
             href: "#",
-            status: incompleteStatus
+            status: toDo
           },
           {
             title: {
               text: "Fraud"
             },
             href: "#",
-            status: incompleteStatus
+            status: toDo
           },
           {
             title: {
               text: "Keep customer interactions safe (KCIS)"
             },
             href: "#",
-            status: incompleteStatus
+            status: toDo
           },
           {
             title: {
               text: "Working abroad"
             },
             href: "#",
-            status: incompleteStatus
+            status: toDo
           },
           {
             title: {
               text: "Foreign benefits"
             },
             href: "#",
-            status: incompleteStatus
+            status: toDo
           },
           {
             title: {
               text: "Disability Living Allowance (DLA)"
             },
             href: "#",
-            status: incompleteStatus
+            status: toDo
           },
           {
             title: {
               text: "Child Disability Payment or Adult Disability Payment"
             },
             href: "#",
-            status: incompleteStatus
+            status: toDo
           },
           {
             title: {
               text: "Armed Forces Independence Payment (AFIP)"
             },
             href: "#",
-            status: incompleteStatus
+            status: toDo
           },
           {
             title: {
               text: "War Pensioners' Mobility Supplement (WPMS)"
             },
             href: "#",
-            status: incompleteStatus
+            status: toDo
           },
           {
             title: {
               text: "Constant Attendance Allowance"
             },
             href: "#",
-            status: incompleteStatus
+            status: toDo
           }
         ]
       }) }}

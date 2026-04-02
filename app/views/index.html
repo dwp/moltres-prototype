@@ -7,10 +7,6 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    <h1 class="govuk-heading-xl">
-      {{ serviceName }}
-    </h1>
-
     <div>
       <h1 class="govuk-heading-m">Reasonable Adjustments</h1>
       
@@ -71,10 +67,30 @@ An ECHR letter is expected indicating that DWP is currently not sufficiently mee
       <p class="govuk-body">Problem statement:</p>
       <p class="govuk-body">Agents are currently unable to edit a claim in PIPS. Any claims that require editing are ejected from PIPS and need to be rebuilt into PIPCS. As part of this work we need to make sure agents are able to edit in PIPS so we have less case ejects.</p>
       
+            <h1 class="govuk-heading-m">Edit address</h1>
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-half">
     {{ govukButton({
-          text: "Edit address",
+          text: "Pre-checks",
+          href: "/V2/agent-checks/pre-checks.html"
+        }) }}
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    {{ govukButton({
+          text: "Person Record",
+          href: "/V2/PR/pr-overview.html"
+        }) }}
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    {{ govukButton({
+          text: "Pre-decision",
           href: "/V2/agent-checks/pre-checks.html"
         }) }}
   </div>

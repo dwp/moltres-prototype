@@ -1,4 +1,4 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/pips.html" %}
 
 {% block pageTitle %}
   Residential address – {{ serviceName }} – GOV.UK Prototype Kit
@@ -7,7 +7,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "javascript:window.history.back()"
+  href: "/V2/agent-checks/pre-checks.html"
 }) }}
 {% endblock %}
 
@@ -28,7 +28,7 @@
     legend: {
       text: "Does their address match the residential address shown on Searchlight?",
       isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
+      classes: "govuk-fieldset__legend--xl"
     }
   },
   items: [
