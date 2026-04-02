@@ -36,6 +36,13 @@
       } %}
 
 
+      {% set Paused = {
+        tag: {
+          text: "Paused",
+          classes: "govuk-tag govuk-tag--yellow"
+        }
+      } %}
+
       {% set toDo = {
         tag: {
           text: "To do",
@@ -46,7 +53,7 @@
       {% set issueStatus = {
         tag: {
           text: "Issue",
-          classes: "govuk-tag--yellow"
+          classes: "govuk-tag--red"
         }
       } %}
 
@@ -74,7 +81,7 @@
               text: "Residential address"
             },
             href: "/V2/agent-checks/confirm-update-address.html",
-            status: issueStatus
+            status: Paused
           },
           {
             title: {
@@ -206,8 +213,12 @@
       }) }}
 
       <div class="govuk-!-margin-top-5">
-        {{ govukButton({ text: "Apply", href: "#" }) }}
+        <p class="govuk-body">
+  <a href="#" class="govuk-link govuk-link--no-visited-state">I need to come back to this application later</a>
+</p>
       </div>
+
+    </div>
 
     </div>
   </div>
