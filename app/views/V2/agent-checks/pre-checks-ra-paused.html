@@ -81,7 +81,7 @@
               text: "Residential address"
             },
             href: "/V2/agent-checks/confirm-update-address.html",
-            status: issueStatus
+            status: Paused
           },
           {
             title: {
@@ -212,44 +212,11 @@
         ]
       }) }}
 
-        <h2 class="govuk-heading-l">
-          There are issues with this application
-        </h2>
+      <div class="govuk-!-margin-top-5">
         <p class="govuk-body">
-          You can move this application to be processed in PIPCS or send it to an assessment provider.
-        </p>
-        <form action="/form-handler" method="post" novalidate>
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                What do you want to do now?
-              </legend>
-              <div class="govuk-radios" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="interviewNeeds" name="interviewNeeds" type="radio" value="yes">
-                  <label class="govuk-label govuk-radios__label" for="interviewNeeds">
-                    Send application to assessment provider
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="interviewNeeds" name="interviewNeeds" type="radio" value="yes">
-                  <label class="govuk-label govuk-radios__label" for="interviewNeeds">
-                    Move application to PIPCS
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="interviewNeeds-2" name="interviewNeeds" type="radio" value="no">
-                  <label class="govuk-label govuk-radios__label" for="interviewNeeds-2">
-                    Disallow application
-                  </label>
-                </div>
-              </div>
-            </fieldset>
-          </div>
-          <button type="submit" class="govuk-button" data-module="govuk-button">
-            Continue
-          </button>
-        </form>
+  <a href="#" class="govuk-link govuk-link--no-visited-state">I need to come back to this application later</a>
+</p>
+      </div>
 
     </div>
 
