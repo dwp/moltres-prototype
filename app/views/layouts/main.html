@@ -3,23 +3,5 @@ For guidance on how to use layouts see:
 https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 #}
 
-{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
-
-{% block header %}
-{{ govukHeader({
-  homepageUrl: "/index.html",
-  serviceName: "Apply for Personal Independence Payment",
-  serviceUrl: "#",
-  navigation: [
-    {
-      href: "#1",
-      text: "Help and contact",
-      active: false
-    },
-    {
-      href: "#2",
-      text: "Sign out"
-    }
-  ]
-}) }}
-{% endblock %}
+{% set navigation_hide = true %}
+{% extends "/V2/april/layout/agent.html" %}

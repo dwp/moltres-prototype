@@ -1,0 +1,71 @@
+{#
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block header %}
+{{
+    dwpHeader({
+        serviceName: serviceName,
+        serviceHref: '/',
+        action: "My home page",
+        actionHref: "#",
+        container: true
+    })
+}}
+{% endblock %}
+
+{% block main %}
+<div class="govuk-width-container">
+
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "PROTOTYPE"
+  },
+  html: 'This is a prototype service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.'
+}) }}
+
+  <div class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+  {{
+          dwpQuickReference({
+              ariaLabel: "Case information",
+              primaryReference: {
+                  text: 'Name:',
+                  value: 'Jeff Bridges'
+              },
+              secondaryReference: {
+                  text: 'National Insurance number:',
+                  value: 'NA 11 22 33 C'
+              }
+          })
+  }}  
+    </div>
+  </div>
+  {% if currentURL.includes("/dwp-find-an-address-plugin") %}
+        {% include "../parts/breadcrumb-address.html" %}
+  {% endif %}
+
+    <main>
+    <div class="govuk-grid-row">
+        {% if navigation_hide !== true %}
+        <div class="govuk-grid-column-one-quarter">
+
+        {% include "../parts/navigation.html" %}
+
+        </div>
+        {% endif %}
+        <div class="govuk-grid-column-three-quarters">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+</div>
+</div>
+</div>
+
+{% endblock %}
+

@@ -9,8 +9,6 @@ const router = govukPrototypeKit.requests.setupRouter()
 // Find an address plugin
 const findAddressPlugin = require("find-an-address-plugin");
 
-findAddressPlugin(router);
-
 // Logging session data  
 // This code shows in the terminal what session data has been saved.
 router.use((req, res, next) => {    
@@ -55,6 +53,9 @@ router.post('/V1/hig-qs/adjustments/lang-options', function(request, response) {
 		response.redirect("/V1/hig-qs/adjustments/lang-prefs-check-answers")
 	}
 })
+
+findAddressPlugin(router);
+
 
 
   

@@ -1,0 +1,42 @@
+{% extends "./layout/agent.html" %}
+
+{% block pageTitle %}
+  Overview – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+
+        <h1 class="govuk-heading-l">Overview</h1>
+        
+
+        <dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Application/claim
+    </dt>
+    <dd class="govuk-summary-list__value">
+        Received health information gather
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Outcome
+    </dt>
+    <dd class="govuk-summary-list__value">
+      -
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Flags and markers
+    </dt>
+    <ul class="govuk-list govuk-list--bullet">
+  <li>Additional support</li>
+  <li>Reasonable adjustments</li>
+</ul>
+  </div>
+</dl>
+
+{% endblock %}
