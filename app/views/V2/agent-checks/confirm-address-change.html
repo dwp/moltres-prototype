@@ -1,13 +1,13 @@
 {% extends "layouts/pips.html" %}
 
 {% block pageTitle %}
- Have you confirmed and updated the address? – {{ serviceName }} – GOV.UK Prototype Kit
+  Residential address – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "/V2/agent-checks/pre-checks-ra-issue.html"
+  href: "/V2/agent-checks/pre-checks-ra-paused"
 }) }}
 {% endblock %}
 
@@ -15,21 +15,19 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
+<form action="/V2/agent-checks/pre-checks-ra-paused" method="post">
       <h1 class="govuk-heading-m">Jeff Bridges</h1>
-      <p class="govuk-body">NA 11 22 33 C</p>
+ <p class="govuk-body">NA 11 22 33 C</p>
 
-      <form class="form" action="/path/of/next/page" method="post">
-
-      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+  {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {{ govukRadios({
-  name: "whereDoYouLive",
+  name: "confirmAddress",
   fieldset: {
     legend: {
       text: "Have you confirmed and updated the address?",
       isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
+      classes: "govuk-fieldset__legend--xl"
     }
   },
   items: [
@@ -38,26 +36,25 @@
       text: "Yes"
     },
     {
-      value: "not-able-to-do",
+      value: "no",
       text: "No, I am not able to do this"
     },
     {
-      value: "come-back-to-later",
+      value: "later",
       text: "I need to come back to this later"
     },
     {
-      divider: "or"
-    },
-    {
-      value: "address-already-matched",
-      text: "I made a mistake, the address already matched"
+      value: "false",
+      text: "I made a mistake the address already matched"
     }
   ]
 }) }}
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+        
+{{ govukButton({
+  text: "Continue"
+}) }}
+
 
       </form>
 

@@ -11,6 +11,8 @@
 .govuk-summary-list__value { display: none; }
 </style>
   <h1 class="govuk-heading-l">Address</h1>
+    <h2 class="govuk-heading-m">Residential address</h2>
+
         {{ govukSummaryList({
         rows: [
           {
@@ -21,7 +23,7 @@
               <p class='govuk-body govuk-!-margin-bottom-0'>SW1A 2AA</p>
               <p class='govuk-body'>England</p>
               
-              <p class='govuk-caption-m'>Added 3rd of Febuary</p>"
+              <p class='govuk-caption-m'>Added 3 February 2024</p>"
             },
             value: {
               text: data[""]
@@ -34,49 +36,6 @@
                   visuallyHiddenText: "address"
                 }
               ]
-            }
-          }
-        ]
-      }) }}
-
-      <h2 class="govuk-heading-m">Address history</p>
-
-        {{ govukSummaryList({
-        rows: [
-          {
-            key: {
-              html: "
-              <p class='govuk-body govuk-!-margin-bottom-0'>9 Downing Street</p>
-              <p class='govuk-body govuk-!-margin-bottom-0'>London</p>
-              <p class='govuk-body govuk-!-margin-bottom-0'>SW1A 2AA</p>
-              <p class='govuk-body'>England</p>
-              
-              <p class='govuk-caption-m'>2nd Janauary 2022 - 3rd February 2024</p>"
-            }
-          },
-          {
-            key: {
-              html: "
-              <p class='govuk-body govuk-!-margin-bottom-0'>8 Downing Street</p>
-              <p class='govuk-body govuk-!-margin-bottom-0'>London</p>
-              <p class='govuk-body govuk-!-margin-bottom-0'>SW1A 2AA</p>
-              <p class='govuk-body'>England</p>
-              
-              <p class='govuk-caption-m'>23rd November 2020 - 2nd Janauary 2022</p>
-              "
-            }
-          },
-          {
-            key: {
-              html: "
-              <p class='govuk-body govuk-!-margin-bottom-0'>9 Downing Street</p>
-              <p class='govuk-body govuk-!-margin-bottom-0'>London</p>
-              <p class='govuk-body govuk-!-margin-bottom-0'>SW1A 2AA</p>
-              <p class='govuk-body'>England</p>
-
-              <p class='govuk-caption-m'>5th September 2020 - 23rd November 2020</p>
-              
-              "
             }
           }
         ]

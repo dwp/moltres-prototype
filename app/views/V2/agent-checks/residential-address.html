@@ -15,8 +15,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-            <form class="form" action="/V2/agent-checks/resolve-this-issue-idv.html" method="post">
-
+<form action="/V2/agent-checks/resolve-this-issue-idv" method="post">
       <h1 class="govuk-heading-m">Jeff Bridges</h1>
  <p class="govuk-body">NA 11 22 33 C</p>
 
@@ -39,14 +38,19 @@
     {
       value: "no",
       text: "No"
+    },
+    {
+      value: "later",
+      text: "I need to come back to this later"
     }
   ]
 }) }}
 
-        {{ govukButton({
-          text: "Continue",
-          href: "/V2/agent-checks/resolve-this-issue-idv.html"
-        }) }}
+        
+{{ govukButton({
+  text: "Continue"
+}) }}
+
 
       </form>
 

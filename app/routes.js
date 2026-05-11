@@ -54,6 +54,48 @@ router.post('/V1/hig-qs/adjustments/lang-options', function(request, response) {
 	}
 })
 
+router.post('/V2/agent-checks/resolve-this-issue-idv', function (request, response) {
+
+  var addressMatch = request.session.data['whereDoYouLive']
+
+  if (addressMatch === 'yes') {
+    response.redirect('/V2/agent-checks/pre-checks-no-issue')
+  } 
+  else if (addressMatch === 'no') {
+    response.redirect('/V2/agent-checks/resolve-this-issue-idv')
+  } 
+  else {
+    response.redirect('/V2/agent-checks/pre-checks-ra-paused')
+  }
+
+})
+
+router.post('/V2/agent-checks/pre-checks-ra-paused', function (request, response) {
+
+  var confirmAddress = request.session.data['confirmAddress']
+
+  if (confirmAddress === 'yes') {
+    response.redirect('/V2/agent-checks/add-cmr-note')
+  } 
+  else if (confirmAddress === 'no') {
+    response.redirect('/V2/agent-checks/pre-checks-ra-issue')
+  } 
+  else if (confirmAddress === 'later') {
+    response.redirect('/V2/agent-checks/pre-checks-ra-paused')
+  } 
+  else if (confirmAddress === 'false') {
+    response.redirect('/V2/agent-checks/pre-checks-no-issue')
+  } 
+  else {
+    // safety fallback if nothing selected
+    response.redirect('/V2/agent-checks/pre-checks-ra-paused')
+  }
+
+})
+
+
+
+
 findAddressPlugin(router);
 
 
