@@ -93,6 +93,68 @@ router.post('/V2/agent-checks/pre-checks-ra-paused', function (request, response
 
 })
 
+router.post('/V2/pre-decision/resolve-this-issue', function (request, response) {
+
+  var addressMatch = request.session.data['addressMatch']
+
+  if (addressMatch === 'yes') {
+    response.redirect('/V2/pre-decision/pre-decision-no-issue')
+  } 
+  else if (addressMatch === 'no') {
+    response.redirect('/V2/pre-decision/resolve-this-issue')
+  } 
+  else if (addressMatch === 'later') {
+    response.redirect('/V2/pre-decision/pre-decision-ra-paused')
+  } 
+  else {
+    // fallback if nothing selected
+    response.redirect('/V2/pre-decision/pre-decision-no-issue')
+  }
+
+})
+
+router.post('/V2/pre-decision/pre-decision-ra-issue', function (request, response) {
+
+  var addressMatch = request.session.data['addressMatch']
+
+  if (addressMatch === 'yes') {
+    response.redirect('/V2/pre-decision/pre-decision-no-issue')
+  } 
+  else if (addressMatch === 'no') {
+    response.redirect('/V2/pre-decision/pre-decision-ra-issue')
+  } 
+  else if (addressMatch === 'later') {
+    response.redirect('/V2/pre-decision/pre-decision-ra-paused')
+  } 
+  else {
+    // fallback if nothing selected
+    response.redirect('/V2/pre-decision/pre-decision-ra-issue')
+  }
+
+})
+
+router.post('/V2/pre-decision/pre-decision-ra-paused', function (request, response) {
+
+  var confirmAddress = request.session.data['confirmAddress']
+
+  if (confirmAddress === 'yes') {
+    response.redirect('/V2/pre-decision/add-cmr-note')
+  } 
+  else if (confirmAddress === 'no') {
+    response.redirect('/V2/pre-decision/pre-decision-ra-issue')
+  } 
+  else if (confirmAddress === 'later') {
+    response.redirect('/V2/pre-decision/pre-decision-ra-paused')
+  } 
+  else if (confirmAddress === 'false') {
+    response.redirect('/V2/pre-decision/pre-decision-no-issue')
+  } 
+  else {
+    // safety fallback if nothing selected
+    response.redirect('/V2/pre-decision/pre-decision-ra-paused')
+  }
+
+})
 
 
 

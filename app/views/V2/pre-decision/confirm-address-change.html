@@ -1,0 +1,64 @@
+{% extends "layouts/pips.html" %}
+
+{% block pageTitle %}
+  Residential address – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "app/views/V2/pre-decision/pre-decision-ra-paused"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+<form action="/V2/pre-decision/pre-decision-ra-paused" method="post">
+        <h1 class="govuk-heading-m">Jeff Bridges</h1>
+ <p class="govuk-body">NA 11 22 33 C</p>
+
+  {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "confirmAddress",
+  fieldset: {
+    legend: {
+      text: "Have you confirmed and updated the address?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No, I am not able to do this"
+    },
+    {
+      value: "later",
+      text: "I need to come back to this later"
+    },
+    {
+      value: "false",
+      text: "I made a mistake the address already matched"
+    }
+  ]
+}) }}
+
+        
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

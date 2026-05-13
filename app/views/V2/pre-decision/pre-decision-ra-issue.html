@@ -16,13 +16,16 @@
  <p class="govuk-body">NA 11 22 33 C</p>
 
 
-      <h1 class="govuk-heading-xl">Prepare an application for an assessment provider</h1>
+      <h1 class="govuk-heading-xl">Prepare an application for a decision</h1>
             <h1 class="govuk-heading-m">Review supplied information</h1>
 <p class="govuk-body">
   <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">Registration (PIP1) (opens in new tab)</a>
 </p>
 <p class="govuk-body">
   <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">Supporting documents (opens in new tab)</a>
+</p>
+<p class="govuk-body">
+  <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">Health assessment report (opens in new tab)</a>
 </p>
 
       <h2 class="govuk-heading-m">Check application</h2>
@@ -81,7 +84,7 @@
               text: "Residential address"
             },
             href: "/V2/agent-checks/confirm-update-address.html",
-            status: taskDone
+            status: issueStatus
           },
           {
             title: {
@@ -212,6 +215,43 @@
         ]
       }) }}
 
+        <h2 class="govuk-heading-l">
+          There are issues with this application
+        </h2>
+        <p class="govuk-body">
+          You can move this application to be processed in PIPCS or send it to an assessment provider.
+        </p>
+        <form action="/form-handler" method="post" novalidate>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                What do you want to do now?
+              </legend>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="interviewNeeds" name="interviewNeeds" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="interviewNeeds">
+                    Send application to assessment provider
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="interviewNeeds" name="interviewNeeds" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="interviewNeeds">
+                    Move application to PIPCS
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="interviewNeeds-2" name="interviewNeeds" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="interviewNeeds-2">
+                    Disallow application
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
         </form>
 
     </div>

@@ -1,0 +1,54 @@
+{% extends "layouts/pips.html" %}
+
+{% block pageTitle %}
+  Residential address – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "/V2/pre-decision/pre-decision-ra-paused"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+<form action="/V2/pre-decision/pre-decision-no-issue" method="post">
+      <h1 class="govuk-heading-l">Jeff Bridges</h1>
+ <p class="govuk-body">NA 11 22 33 C</p>
+
+{% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
+
+{{ govukCharacterCount({
+  name: "withHint",
+  id: "with-hint",
+  maxlength: 2000,
+  label: {
+    text: "Add a note",
+    classes: "govuk-label--l",
+    isPageHeading: true
+  },
+  hint: {
+    html: "
+      <p class='govuk-hint'>
+        Enter more information about the actions you have taken.
+      </p>
+      <p class='govuk'>
+        Your actions will be added to the applicant’s event history.
+      </p>
+    "
+  }
+}) }}
+
+{{ govukButton({
+  text: "Save and continue"
+}) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

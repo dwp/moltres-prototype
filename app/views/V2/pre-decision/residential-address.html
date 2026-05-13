@@ -1,0 +1,62 @@
+{% extends "layouts/pips.html" %}
+
+{% block pageTitle %}
+  Residential address – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "/V2/pre-decision/pre-decision-task-list.html"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+<form action="/V2/pre-decision/resolve-this-issue" method="post">
+      <h1 class="govuk-heading-m">Jeff Bridges</h1>
+ <p class="govuk-body">NA 11 22 33 C</p>
+
+  {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "addressMatch",
+  fieldset: {
+    legend: {
+      text: "Does their address match the residential address shown on Searchlight?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    },
+    {
+      value: "later",
+      text: "I need to come back to this later"
+    }
+  ]
+}) }}
+
+        
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+<p class="govuk-body">
+  <a href="/V2/pre-decision/pre-decision-ra-paused" class="govuk-link govuk-link--no-visited-state">I need to come back to this application later</a>
+</p>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

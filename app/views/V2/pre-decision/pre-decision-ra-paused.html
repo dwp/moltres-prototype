@@ -24,6 +24,9 @@
 <p class="govuk-body">
   <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">Supporting documents (opens in new tab)</a>
 </p>
+<p class="govuk-body">
+  <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">Health assessment report (opens in new tab)</a>
+</p>
 
       <h2 class="govuk-heading-m">Check application</h2>
 
@@ -64,7 +67,7 @@
         items: [
           {
             title: {
-              text: "National Insurance number"
+              text: "Identity verification"
             },
             href: "#",
             status: taskDone
@@ -80,8 +83,8 @@
             title: {
               text: "Residential address"
             },
-            href: "/V2/agent-checks/confirm-update-address.html",
-            status: taskDone
+            href: "/V2/pre-decision/confirm-address-change.html",
+            status: Paused
           },
           {
             title: {
@@ -212,7 +215,11 @@
         ]
       }) }}
 
-        </form>
+      <div class="govuk-!-margin-top-5">
+        <p class="govuk-body">
+  <a href="#" class="govuk-link govuk-link--no-visited-state">I need to come back to this application later</a>
+</p>
+      </div>
 
     </div>
 

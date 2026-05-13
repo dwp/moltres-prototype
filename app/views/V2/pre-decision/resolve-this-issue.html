@@ -1,0 +1,39 @@
+{% extends "layouts/pips.html" %}
+
+{% block pageTitle %}
+  How to resolve this issue – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/V2/pre-decision/residential-address.html"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-m">Jeff Bridges</h1>
+      <p class="govuk-body">NA 11 22 33 C</p>
+
+      <h1 class="govuk-heading-xl">
+        How to resolve this issue
+      </h1>
+
+      <p class="govuk-body">
+        Answer the rest of the questions about this application before you try to contact the applicant or change their address.
+      </p>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "/V2/pre-decision/pre-decision-ra-paused"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
+``
