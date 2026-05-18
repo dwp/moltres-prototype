@@ -61,6 +61,11 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
         {% endif %}
         <div class="govuk-grid-column-three-quarters">
             {% block content %}{% endblock %}
+              {% if currentURL.includes("/dwp-find-an-address-plugin") %}
+        <p class="govuk-body">
+  <a href="" class="govuk-link govuk-link--no-visited-state">I need to move this application to PIPCS</a>
+</p>
+  {% endif %}
         </div>
     </main>
 </div>

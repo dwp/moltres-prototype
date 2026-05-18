@@ -6,6 +6,15 @@
 
 {% block content %}
 
+{% set html %}
+  <p class="govuk-body">Residential address has been changed.</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: "success"
+}) }}
+
 <!-- this isn't the best use of this element - maybe should be a list? or one element -->
 <style>
 .govuk-summary-list__value { display: none; }
@@ -13,17 +22,20 @@
   <h1 class="govuk-heading-l">Address</h1>
     <h2 class="govuk-heading-m">Residential address</h2>
 
+  
+    {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
         {{ govukSummaryList({
         rows: [
           {
             key: {
               html: "
-              <p class='govuk-body govuk-!-margin-bottom-0'>10 Downing Street</p>
+              <p class='govuk-body govuk-!-margin-bottom-0'>11 Downing Street</p>
               <p class='govuk-body govuk-!-margin-bottom-0'>London</p>
               <p class='govuk-body govuk-!-margin-bottom-0'>SW1A 2AA</p>
               <p class='govuk-body'>England</p>
               
-              <p class='govuk-caption-m'>Added 3 February 2024</p>"
+              <p class='govuk-caption-m'>Added 18 May 2026</p>"
             },
             value: {
               text: data[""]
